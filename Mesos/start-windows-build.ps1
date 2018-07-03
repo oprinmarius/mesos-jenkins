@@ -283,7 +283,7 @@ function Get-MesosBuildRelativePath {
     }
     $repositoryOwner = $GitURL.Split("/")[-2]
     $mesosCommitID = Get-LatestCommitID
-    return "$repositoryOwner/$Branch/$mesosCommitID"
+    return "${env:JOB_NAME}/$repositoryOwner/$Branch/$mesosCommitID/${env:BUILD_NUMBER}"
 }
 
 function Get-RemoteBuildDirectoryPath {

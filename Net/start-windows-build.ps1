@@ -77,7 +77,7 @@ function Get-LatestCommitID {
 function Get-DCOSNetBuildRelativePath {
     $repositoryOwner = $GitURL.Split("/")[-2]
     $dcosNetCommitID = Get-LatestCommitID
-    return "$repositoryOwner/$Branch/$dcosNetCommitID"
+    return "${env:JOB_NAME}/$repositoryOwner/$Branch/$dcosNetCommitID/${env:BUILD_NUMBER}"
 }
 
 function Get-BuildOutputsUrl {

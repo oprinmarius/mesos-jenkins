@@ -76,7 +76,7 @@ function Get-LatestCommitID {
 
 function Get-BuildOutputsUrl {
     $spartanCommitID = Get-LatestCommitID
-    return "$SPARTAN_BUILD_BASE_URL/$Branch/$spartanCommitID"
+    return "$SPARTAN_BUILD_BASE_URL/${env:JOB_NAME}/$Branch/$spartanCommitID/${env:BUILD_NUMBER}"
 }
 
 function Get-BuildLogsUrl {
